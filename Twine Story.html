@@ -131,7 +131,7 @@ I run out of the room as it ends. I need to lie down and think.
 (text-colour:red) [We begin soon, as you know. Everything is slowly falling into place.]
 
 {&lt;br&gt;
-(if:$CollectedRobKey or $CollectedMenKey is true)[How does he know that?] I&#39;m started to get freaked out.
+(if:$CollectedRobKey or $CollectedMenKey is true)[How does where I&#39;ve been?] I&#39;m started to get freaked out.
 }
 
 (text-colour:red)[Come now, I&#39;ll take you to my lab and get you looked at.]
@@ -632,7 +632,9 @@ He doesn&#39;t seem impressed.
 
 {
 (set: $writer to true)
-}</tw-passagedata><tw-passagedata pid="55" name="WriterCollected" tags="" position="1425,2875" size="100,100">{(if:$actor is false)[(text-colour:yellow) [Well done! You&#39;ve collected the (text-colour:orange)[writer]!]
+}</tw-passagedata><tw-passagedata pid="55" name="WriterCollected" tags="" position="1425,2875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Fire.png&quot; width=30%&gt;
+
+{(if:$actor is false)[(text-colour:yellow) [Well done! You&#39;ve collected the (text-colour:orange)[writer]!]
 
 &lt;br&gt;(text-colour:red) [No time to waste. Time for the second half of the mission.]
 
@@ -643,7 +645,9 @@ He doesn&#39;t seem impressed.
 
 (if:$actor is true)[(text-colour:red) [You&#39;ve completed both parts! Time for the endgame.]
 
-[[Endgame-&gt;Endgame]]]</tw-passagedata><tw-passagedata pid="56" name="ActorCollected" tags="" position="1625,2875" size="100,100">(if:$writer is false)[(text-colour:yellow) [Well done! You&#39;ve collected the (text-colour:magenta)[Actor]!]
+[[Endgame-&gt;Endgame]]]</tw-passagedata><tw-passagedata pid="56" name="ActorCollected" tags="" position="1625,2875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Fire.png&quot; width=30%&gt;
+
+(if:$writer is false)[(text-colour:yellow) [Well done! You&#39;ve collected the (text-colour:magenta)[Actor]!]
 
 (text-colour:red) [No time to waste. Time for the second half of the mission.]
 
@@ -794,25 +798,25 @@ What should I guess for the third digit?
 ]
 (text-colour:orange)[You convinced the writer and the actor to join us!
 ]
-(text-colour:red)[Wait, I just realized, before you complete your journey. Everyone who joins the groups receives a name! What&#39;s your name?]
+(text-colour:red)[Before you complete your journey. It is time for your new name.]
 
 I get a name? I get an //identity//. 
 
 (input-box:2bind $name,&quot;=======XXXXXX=======&quot;,1)
 
-I get to complete my journey. I.....I&#39;m speechless.
+I get to complete my journey. I.....I&#39;m //speeczhless//.
 
-[[Complete your journey-&gt;End]]</tw-passagedata><tw-passagedata pid="73" name="End" tags="" position="1625,5075" size="100,100">&lt;div class=&quot;title&quot;&gt;&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Plant.png&quot; width=30%&gt;
+[[Complete your journey-&gt;End]]</tw-passagedata><tw-passagedata pid="73" name="End" tags="" position="1625,5075" size="100,100">&lt;div class=&quot;title&quot;&gt;&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Plant.gif&quot; width=70%&gt;
 
-(text-colour:grey)[&gt;Congratulations, $name! 
+(text-colour:grey)[Congratulations, $name!
 
 You&#39;ve completed your journey. 
 
-Welcome to the group!]
+Welcome.]
 
 [[Relive your journey-&gt;Restart]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="74" name="Restart" tags="" position="1625,5275" size="100,100">You are restarting the game. 
+</tw-passagedata><tw-passagedata pid="74" name="Restart" tags="" position="1750,5275" size="100,100">You are restarting the game. 
 
 [[Start new journey -&gt;Start]]
 
@@ -881,15 +885,6 @@ Ok, let&#39;s get this done, where is this (text-colour:magenta)[actor]?
 Before you begin, remember to forget.
 
 [[Start Story-&gt;Start]]
-
-&lt;script&gt;
-
-var audio = document.createElement(&#39;audio&#39;);
-audio.src = &#39;https://sidnarsipur.github.io/twinegame/Music/Rumble.mp3&#39;;
-audio.loop = true;
-
-audio.play();
-&lt;/script&gt;
 
 </tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
