@@ -23,9 +23,12 @@ tw-passage {
 
 .visited:hover {
 	color: DeepSkyBlue;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="1100,200" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Dorm.png&quot; width=30%&gt;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+var audio = document.createElement('audio');
+</script><tw-passagedata pid="1" name="Start" tags="" position="1100,200" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Dorm.png&quot; width=30%&gt;
 
 &lt;script&gt;
+
 var audio = document.createElement(&#39;audio&#39;);
 audio.src = &#39;https://sidnarsipur.github.io/twinegame/Music/Music.mp3&#39;;
 audio.loop = true;
@@ -37,7 +40,7 @@ I wake up in my dorm.
 
 Dark. Diorientated. Defeated. 
 
-Hungover. But I don&#39;t drink.// Wait, do I?//
+Hungover? But I don&#39;t drink.// Wait, do I?//
 
 [[Get out of bed-&gt;Out of bed]]</tw-passagedata><tw-passagedata pid="2" name="Out of bed" tags="" position="1100,350" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/MessyRoom.png&quot; width=30%&gt;
 
@@ -53,7 +56,7 @@ My favorite watch is on the ledge of the window.// I don&#39;t remember leaving 
 
 Apart from a tiny scratch on the strap, it seems fine. 
 
-I glance down at the time, it&#39;s //10:50./  Why did I wake up at night?
+I glance down at the time, it&#39;s //10:50. That&#39;s wierd. Why did I wake up at night?//
 
 //When did I go to sleep?//
 
@@ -74,7 +77,9 @@ As I walk up to the entrance of the dining hall, I see (text-colour:yellow)[two 
 
 &lt;br&gt;(if:$CollectedProfKey is false)[[[Go back to sleep-&gt;Wake]]]
 }
-</tw-passagedata><tw-passagedata pid="5" name="Ramen" tags="" position="2125,475" size="100,100">I don&#39;t think I should run outside in the cold.  Let&#39;s just make some quick and easy ramen. 
+</tw-passagedata><tw-passagedata pid="5" name="Ramen" tags="" position="2125,475" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Dorm.png&quot; width=30%&gt;
+
+I don&#39;t think I should run outside in the cold.  Let&#39;s just make some quick and easy ramen. 
 
 I take a packet of ramen out of the cupboard and start cooking. 
 
@@ -123,7 +128,7 @@ I run out of the room as it ends. I need to lie down and think.
 {&lt;br&gt;(if:$CollectedMenKey is true)[(text-colour:red)[You&#39;ve already met the two men, haven&#39;t you? That&#39;s good. My teachings are often similar to theirs. Good people. ]](if:$CollectedRobKey is true)[(text-colour:red)[You&#39;ve met Rob. Wonderful sense of imagination. Lovely boy.]]
  }
 
-(text-colour:red) [Time is ripening, as you know. ]
+(text-colour:red) [We begin soon, as you know. Everything is slowly falling into place.]
 
 {&lt;br&gt;
 (if:$CollectedRobKey or $CollectedMenKey is true)[How does he know that?] I&#39;m started to get freaked out.
@@ -650,13 +655,13 @@ He doesn&#39;t seem impressed.
 
 [[Endgame-&gt;Endgame]]]
 
-</tw-passagedata><tw-passagedata pid="57" name="trailer" tags="" position="1925,2875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Trailer.png&quot; width=30%&gt;
+</tw-passagedata><tw-passagedata pid="57" name="trailer" tags="" position="1950,2875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Trailer.png&quot; width=30%&gt;
 
 I knock on the trailer. No response. 
 
 Suddenly, a  (text-colour:lime)[cop] shows up! 
 
-&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Trailer.png&quot; width=20%&gt;
+&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Cop.png&quot; width=20%&gt;
 
 (text-colour: lime) [You need to leave immediately!]
 
@@ -842,11 +847,18 @@ Dorm? Am I in college? How old am I?
 
 Wait...what am I doing here? In a studio..
 
+Why can&#39;t I remember anything? 
+
 //Collect the (text-colour:orange)[actor]// 
 
-Ah, the actor. I should wait for her. 
+~~Wait, I can see you. Yes, &#39;&#39;you&#39;&#39;. At the computer screen. Clicking buttons and controlling my life. ~~
 
-[[Wait for the actor-&gt;Wait]]</tw-passagedata><tw-passagedata pid="78" name="Wait" tags="" position="2725,2875" size="100,100">I keep waiting for the (text-colour:orange)[actor] but she never shows up. I should check her trailer. 
+~~I can see you I can see you controlobkjer[ibjribjprb No give me back control give me fiwj
+~~
+Ah, the actor. Let&#39;s wait for her. 
+
+[[Wait for the actor-&gt;Wait]]
+</tw-passagedata><tw-passagedata pid="78" name="Wait" tags="" position="2725,2875" size="100,100">I keep waiting for the (text-colour:orange)[actor] but she never shows up. I should check her trailer. 
 
 [[Check her trailer-&gt;trailer]]</tw-passagedata><tw-passagedata pid="79" name="Not Happy2" tags="" position="800,1000" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/TwoMenApproach.png&quot; width=30%&gt;
 
@@ -868,7 +880,18 @@ Ok, let&#39;s get this done, where is this (text-colour:magenta)[actor]?
 
 Before you begin, remember to forget.
 
-[[Start Story-&gt;Start]]</tw-passagedata></tw-storydata>
+[[Start Story-&gt;Start]]
+
+&lt;script&gt;
+
+var audio = document.createElement(&#39;audio&#39;);
+audio.src = &#39;https://sidnarsipur.github.io/twinegame/Music/Rumble.mp3&#39;;
+audio.loop = true;
+
+audio.play();
+&lt;/script&gt;
+
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
