@@ -194,9 +194,9 @@ As I take another moment to look around, the (text-colour:red)[professor] walks 
 &lt;br&gt;I approach them. What should I say?&lt;br&gt;
 
 (if:(history: where its name contains &quot;Not Happy&quot;)&#39;s length is 0)
-[&lt;br&gt;[[Hi!-&gt;Not Happy]]]
+[&lt;br&gt;[[Hi-&gt;Not Happy]]]
 
-&lt;br&gt;[[I&#39;m ready-&gt;Ready]]
+&lt;br&gt;[[I&#39;m ready?-&gt;Ready]]
 }]
 
 </tw-passagedata><tw-passagedata pid="13" name="Forget" tags="" position="725,1175" size="100,100"> As I enter the dining hall, I find my friend (text-colour:green)[Rob]. 
@@ -206,21 +206,17 @@ As I take another moment to look around, the (text-colour:red)[professor] walks 
 [[Talk to Rob-&gt;Rob]]
 
 (if:$CollectedProfKey or $CollectedMenKey is false)[[[Avoid Him-&gt;Avoid]]]
-</tw-passagedata><tw-passagedata pid="14" name="Ready" tags="" position="1125,875" size="100,100">Wait, why did I say that? I feel...wierd. I feel like someone is controlling me. What I say and do. My whole life. 
+</tw-passagedata><tw-passagedata pid="14" name="Ready" tags="" position="1125,875" size="100,100">Wait, why did I say that? I feel...wierd. I feel like someone is controlling me. What I say and do.
 
 &lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/TwoMenApproach.png&quot; width=30%&gt;
 
 The (text-colour:yellow)[two men] shut their laptops and stare at my eyes.
 
-(text-colour:yellow)[Ah, you&#39;re ready. How wonderful! But as you already know, you need to answer a question before we can proceed.]
+(text-colour:yellow)[You need to answer the question before we can proceed.]
 
 (text-colour:yellow)[Can a human without hope live a full and happy life?]
 
 But what does that even mean? 
-
-(text-colour:yellow) [It means whatever you want it to. Now, answer.]
-
-They can hear my thoughts? This is getting really creepy...
 
 (if:(history: where its name contains &quot;Not Happy2&quot;)&#39;s length is 0)[[[Answer - Yes-&gt;Not Happy2]]]
 
@@ -234,9 +230,9 @@ Hmmm. They didn&#39;t seem happy when I said that.
 
 (text-colour:yellow)[Good Answer.]
 
-(text-colour:yellow) [The professor told us you were a charm. Here you go. We&#39;ll see you later tonight!]
+(text-colour:yellow) [Here you go. We&#39;ll see you later tonight.]
 
-I see a key. 
+I see a key
 
 &lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Key.png&quot; width=30%&gt;
 
@@ -1069,9 +1065,10 @@ Quick, answer this question -
 
 Does power corrupt or do the corrupt seek power?]
 
-(if:(history: where its name contains &quot;RobWrong&quot;)&#39;s length is 0)[[[Power doesn&#39;t corrupt. Power reveals.-&gt;RobWrong]]]
+[[Power doesn&#39;t corrupt. Power reveals.-&gt;Pre-Rob]]
 
-[[The problem with politics is that the person it takes to become a president is not the type of person we would want as a president.-&gt;Pre-Rob]]
+(if:(history: where its name contains &quot;RobWrong&quot;)&#39;s length is 0)[
+[[Power corrupts those willing to accepting it.-&gt;RobWrong]]]
 
 </tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
