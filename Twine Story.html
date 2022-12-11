@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Twine Story.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Twine Story" startnode="81" creator="Twine" creator-version="2.5.1" format="Harlowe" format-version="3.3.3" ifid="19273060-5ED5-4BCB-817A-47F07085F106" options="" tags="" zoom="0.3" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-link {
+<tw-storydata name="Twine Story" startnode="80" creator="Twine" creator-version="2.5.1" format="Harlowe" format-version="3.3.3" ifid="19273060-5ED5-4BCB-817A-47F07085F106" options="" tags="" zoom="0.3" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-link {
  font-family: "Lucida Console";
 }
 
@@ -137,7 +137,7 @@ I run out of the room as it ends. I need to lie down and think.
 
 (text-colour:red)[Come now, I&#39;ll take you to my lab and get you looked at.]
 
-[[Enter the professor&#39;s lab-&gt;Lab]]</tw-passagedata><tw-passagedata pid="9" name="Walk Back" tags="" position="1900,950" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Scooter.gif&quot; width=30%&gt;
+[[Enter the professor&#39;s lab-&gt;Pre-Lab]]</tw-passagedata><tw-passagedata pid="9" name="Walk Back" tags="" position="1900,950" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Scooter.gif&quot; width=30%&gt;
 
 On my way back, I see the (text-colour:red) [professor] again. I have a wierd compulsion to tell him about the wierd things going on.
 
@@ -205,7 +205,7 @@ As I take another moment to look around, the (text-colour:red)[professor] walks 
 
 [[Talk to Rob-&gt;Rob]]
 
-(if:$CollectedProfKey and $CollectedMenKey is false)[[[Avoid Him-&gt;Avoid]]]
+(if:$CollectedProfKey or $CollectedMenKey is false)[[[Avoid Him-&gt;Avoid]]]
 </tw-passagedata><tw-passagedata pid="14" name="Ready" tags="" position="1125,875" size="100,100">Wait, why did I say that? I feel...wierd. I feel like someone is controlling me. What I say and do. My whole life. 
 
 &lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/TwoMenApproach.png&quot; width=30%&gt;
@@ -255,7 +255,7 @@ As I&#39;m about to head out, I see Rob again. I want to say Hi, but I&#39;m so 
 
 [[Just say hi-&gt;Rob]]
 
-(if:$CollectedProfKey is false)[[[Go back to your dorm and sleep-&gt;Wake]]]</tw-passagedata><tw-passagedata pid="18" name="startup" tags="startup" position="1125,75" size="100,100">{
+(if:$CollectedProfKey is false)[[[Go back to your dorm and sleep-&gt;Wake]]]</tw-passagedata><tw-passagedata pid="18" name="startup" tags="startup" position="1275,100" size="100,100">{
 (set: $CollectedMenKey to false)
 (set: $CollectedRobKey to false)
 (set: $CollectedProfKey to false)
@@ -278,7 +278,7 @@ As I&#39;m about to head out, I see Rob again. I want to say Hi, but I&#39;m so 
 
 (set: $CollectedMenKey to true)
 
-</tw-passagedata><tw-passagedata pid="20" name="Lab" tags="" position="1625,1375" size="100,100">(text-colour:red)[Here, take this. It&#39;ll help you feel better.]
+</tw-passagedata><tw-passagedata pid="20" name="Lab" tags="" position="1625,1375" size="100,100">(text-colour:red)[Good answer. Here, take this. It&#39;ll help you feel better.]
 
 He hands me a key? How is that going to help me?
 
@@ -286,17 +286,7 @@ He hands me a key? How is that going to help me?
 
 [[Collect the key-&gt;ProfKey]]
 
-</tw-passagedata><tw-passagedata pid="21" name="Marked" tags="" position="525,975" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Rob.png&quot; width=30%&gt;
-
-(text-colour:green)[Marked? Being marked is special. It&#39;s a great honor that they&#39;ve bestowed upon you. I hope you&#39;re ready.]
-
-Ready? Ready for what? 
-
-You&#39;ll know soon enough. For now, take this key. 
-
-&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Key.png&quot; width=30%&gt;
-
-[[Collect the key-&gt;RobKey]]</tw-passagedata><tw-passagedata pid="22" name="Rob" tags="" position="925,1475" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Rob.png&quot; width=30%&gt;
+</tw-passagedata><tw-passagedata pid="21" name="Rob" tags="" position="925,1475" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Rob.png&quot; width=30%&gt;
 
 (if:$CollectedRobKey is true)[{[(text-colour:green)[&lt;br&gt;You already have my key! I can&#39;t help you anymore until you find the others!]]
 
@@ -322,7 +312,7 @@ I approach (text-colour:green)[Rob] and greet him. {
 &lt;br&gt;[[What does &#39;marked&#39; mean?-&gt;Marked]]
 
 &lt;br&gt;[[Alright, nice to meet you, I&#39;ll get going...-&gt;Wake]]
-}]</tw-passagedata><tw-passagedata pid="23" name="RobKey" tags="" position="700,1550" size="100,100">Let&#39;s just take it. Could be useful later. 
+}]</tw-passagedata><tw-passagedata pid="22" name="RobKey" tags="" position="675,1575" size="100,100">Let&#39;s just take it. Could be useful later. 
 
 {
 &lt;br&gt;(if:$CollectedMenKey is false)[[[Go back to the dining hall-&gt;Dining Hall]]]
@@ -332,7 +322,7 @@ I approach (text-colour:green)[Rob] and greet him. {
 &lt;br&gt;(if:$CollectedProfKey is true)[(if:$CollectedMenKey is true)[[[Go where life leads you-&gt;Key]]]]
 }
 
-(set: $CollectedRobKey to true)</tw-passagedata><tw-passagedata pid="24" name="Key" tags="" position="1325,1875" size="100,100">I wake up again in a strange place. That seems to be happening a lot today.
+(set: $CollectedRobKey to true)</tw-passagedata><tw-passagedata pid="23" name="Key" tags="" position="1325,1875" size="100,100">I wake up again in a strange place. That seems to be happening a lot today.
 
 I get on my feet and I see...the (text-colour:yellow)[two men], (text-colour:green)[Rob] and the (text-colour:red)[professor] huddled around a fire chanting something under their breath. 
 
@@ -350,7 +340,7 @@ What should I say?
 
 [[Can I join you guys?-&gt;Join]]
 
-[[Don&#39;t hurt me, please!-&gt;Hurt]]</tw-passagedata><tw-passagedata pid="25" name="ProfKey" tags="" position="1825,1575" size="100,100">Let&#39;s just take it. Could be useful later.
+[[Don&#39;t hurt me, please!-&gt;Hurt]]</tw-passagedata><tw-passagedata pid="24" name="ProfKey" tags="" position="1825,1575" size="100,100">Let&#39;s just take it. Could be useful later.
 
 {
 &lt;br&gt;(if:$CollectedRobKey is false)[I think my friend Rob knows the professor. I should go talk to him about this. ]
@@ -366,7 +356,7 @@ What should I say?
 &lt;br&gt;(if:$CollectedRobKey is true)[(if:$CollectedMenKey is true)[[[Go where life leads you-&gt;Key]]]]
 }
 
-(set: $CollectedProfKey to true)</tw-passagedata><tw-passagedata pid="26" name="Join" tags="" position="1525,2075" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Fire.png&quot; width=30%&gt;
+(set: $CollectedProfKey to true)</tw-passagedata><tw-passagedata pid="25" name="Join" tags="" position="1525,2075" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Fire.png&quot; width=30%&gt;
 
 (text-colour:yellow)[Obviously, what do think we&#39;re doing here?]
 
@@ -376,7 +366,7 @@ I don&#39;t actually know...
 
 (text-colour:red) [Good, let&#39;s begin]
 
-[[Ok, let&#39;s begin-&gt;Remember]]</tw-passagedata><tw-passagedata pid="27" name="Angry" tags="" position="1325,2075" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Rob.png&quot; width=30%&gt;
+[[Ok, let&#39;s begin-&gt;Remember]]</tw-passagedata><tw-passagedata pid="26" name="Angry" tags="" position="1325,2075" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Rob.png&quot; width=30%&gt;
 
 (text-colour:green)[Whoah, buddy. Calm down. You wanted this, remember?]
 
@@ -386,7 +376,7 @@ What is he talking about?
 
 [[What are you talking about?-&gt;Hurt]]
 
-</tw-passagedata><tw-passagedata pid="28" name="Hurt" tags="" position="1125,2075" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Prof.png&quot; width=30% height=50%&gt;
+</tw-passagedata><tw-passagedata pid="27" name="Hurt" tags="" position="1125,2075" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Prof.png&quot; width=30% height=50%&gt;
 
 (text-colour:red)[I thought you said he was ready?]
 
@@ -394,8 +384,8 @@ What is he talking about?
 
 [[Tell them you&#39;re ready-&gt;Remember]]
 
-[[Go to your dorm and sleep-&gt;Start]]</tw-passagedata><tw-passagedata pid="29" name="Continue" tags="" position="1725,2175" size="100,100">
-</tw-passagedata><tw-passagedata pid="30" name="Remember" tags="" position="1350,2275" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Fire.png&quot; width=30%&gt;
+[[Go to your dorm and sleep-&gt;Start]]</tw-passagedata><tw-passagedata pid="28" name="Continue" tags="" position="1725,2175" size="100,100">
+</tw-passagedata><tw-passagedata pid="29" name="Remember" tags="" position="1350,2275" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Fire.png&quot; width=30%&gt;
 
 (text-color: yellow) [Ok, time to focus. I&#39;ve chosen 2 plans like you asked us to. Which one do you think is better?]
 
@@ -405,7 +395,7 @@ What is he talking about?
 
 [[I&#39;m not ready-&gt;Hurt]] 
 
-[[What do you mean by &#39;like you asked us to?&#39;-&gt;Inquire]]</tw-passagedata><tw-passagedata pid="31" name="Plan A" tags="" position="825,2475" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Prof.png&quot; width=30%&gt;
+[[What do you mean by &#39;like you asked us to?&#39;-&gt;Inquire]]</tw-passagedata><tw-passagedata pid="30" name="Plan A" tags="" position="825,2475" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Prof.png&quot; width=30%&gt;
 
 (text-colour:red) [Good choice. That was my plan.]
 
@@ -413,13 +403,13 @@ What is he talking about?
 
 [[Go convince the writer-&gt;writer]]
 
-</tw-passagedata><tw-passagedata pid="32" name="Plan B" tags="" position="2025,2475" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Rob.png&quot; width=30%&gt;
+</tw-passagedata><tw-passagedata pid="31" name="Plan B" tags="" position="2025,2475" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Rob.png&quot; width=30%&gt;
 
 (text-colour:green) [Good choice buddy. That was my plan.]
 
 (text-colour:green)[Ok, first task. I need you to go and convince the (text-colour:magenta)[actor] to join us. ]
 
-[[Go convince the actor-&gt;Actor]]</tw-passagedata><tw-passagedata pid="33" name="writer" tags="" position="825,2675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Casino.png&quot; width=50%&gt;
+[[Go convince the actor-&gt;Actor]]</tw-passagedata><tw-passagedata pid="32" name="writer" tags="" position="825,2675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Casino.png&quot; width=50%&gt;
 
 A casino? Is there a (text-colour:orange)[writer] here?
 
@@ -431,21 +421,21 @@ Where is this (text-colour:orange)[writer] I need to &quot;convince&quot;?
 
 [[Look for the writer at the bar-&gt;Bar]]
 
-</tw-passagedata><tw-passagedata pid="34" name="Blackjack" tags="" position="725,2875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Table.png&quot; width=50%&gt;
+</tw-passagedata><tw-passagedata pid="33" name="Blackjack" tags="" position="725,2875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Table.png&quot; width=50%&gt;
 
 Damn, the (text-colour:orange)[dealer] isn&#39;t here. 
 
 [[Play a game of Blackjack first-&gt;Play]]
 
 [[Look for the dealer at the bar-&gt;Bar]]
-</tw-passagedata><tw-passagedata pid="35" name="Bar" tags="" position="1025,2875" size="100,100">Looking around...looking around. I see a man nosing over a book. Ooh, that could be him. 
+</tw-passagedata><tw-passagedata pid="34" name="Bar" tags="" position="1025,2875" size="100,100">Looking around...looking around. I see a man nosing over a book. Ooh, that could be him. 
 
 &lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer.png&quot; width=30%&gt;
 
 [[Approach the man-&gt;Approach]]
 
 [[Go to the blackjack tables-&gt;Blackjack]]
-</tw-passagedata><tw-passagedata pid="36" name="Play" tags="" position="725,3075" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Table.png&quot; width=50%&gt;
+</tw-passagedata><tw-passagedata pid="35" name="Play" tags="" position="725,3075" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Table.png&quot; width=50%&gt;
 
 I sit down at the Blackjack table. 
 
@@ -455,7 +445,7 @@ I sit down at the Blackjack table.
 
 
 
-</tw-passagedata><tw-passagedata pid="37" name="Play2" tags="" position="625,3225" size="100,100">{(set: $player to (random: 2, 20))
+</tw-passagedata><tw-passagedata pid="36" name="Play2" tags="" position="625,3225" size="100,100">{(set: $player to (random: 2, 20))
 (set: $dealer to (random: 2, 11))}
 
 &lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Cards.png&quot; width=40%&gt;
@@ -466,7 +456,7 @@ The dealer deals his two cards. His face up card numbers &lt;h4&gt;(text-colour:
 
 [[Hit-&gt;Hit]]
 
-[[Stand-&gt;Stand]]</tw-passagedata><tw-passagedata pid="38" name="Hit" tags="" position="625,3475" size="100,100">{(set: $player to (random: $player+1, $player+11))}
+[[Stand-&gt;Stand]]</tw-passagedata><tw-passagedata pid="37" name="Hit" tags="" position="625,3475" size="100,100">{(set: $player to (random: $player+1, $player+11))}
 
 &lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Cards.png&quot; width=50%&gt;
 
@@ -486,7 +476,7 @@ The dealer deals his two cards. His face up card numbers &lt;h4&gt;(text-colour:
 &lt;br&gt;
 [[Stand-&gt;Stand]]
 }]
-</tw-passagedata><tw-passagedata pid="39" name="Stand" tags="" position="825,3475" size="100,100">{(set: $dealer to (random: $dealer+1, $dealer+11))}
+</tw-passagedata><tw-passagedata pid="38" name="Stand" tags="" position="825,3475" size="100,100">{(set: $dealer to (random: $dealer+1, $dealer+11))}
 
 &lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Cards.png&quot; width=50%&gt;
 
@@ -532,7 +522,7 @@ The dealer deals his two cards. His face up card numbers &lt;h4&gt;(text-colour:
 
 [[Go to the bar and find the writer-&gt;Bar]]
 
-</tw-passagedata><tw-passagedata pid="40" name="Approach" tags="" position="1225,3075" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
+</tw-passagedata><tw-passagedata pid="39" name="Approach" tags="" position="1225,3075" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
 
 I approach the man, &quot;Are you the (text-colour:orange)[writer]?&quot;
 
@@ -540,21 +530,21 @@ I approach the man, &quot;Are you the (text-colour:orange)[writer]?&quot;
 
 [[Just me...-&gt;Me]]
 
-(if:(history: where its name contains &quot;Group&quot;)&#39;s length is 0)[[[A group of crazy people making me do crazy things-&gt;Group]]]</tw-passagedata><tw-passagedata pid="41" name="Me" tags="" position="1125,3275" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
+(if:(history: where its name contains &quot;Group&quot;)&#39;s length is 0)[[[A group of crazy people making me do crazy things-&gt;Group]]]</tw-passagedata><tw-passagedata pid="40" name="Me" tags="" position="1125,3275" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
 
 (text-colour:orange)[And who are you? ]
 
 (if:(history: where its name contains &quot;Explain&quot;)&#39;s length is 0)[[[Explain everything that happened today-&gt;Explain]]]
 
-[[I honestly don&#39;t know my name-&gt;Blank]]</tw-passagedata><tw-passagedata pid="42" name="Group" tags="" position="1325,3275" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
+[[I honestly don&#39;t know my name-&gt;Blank]]</tw-passagedata><tw-passagedata pid="41" name="Group" tags="" position="1325,3275" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
 
 He doesn&#39;t seem impressed. 
 
-[[Try Again-&gt;Approach]]</tw-passagedata><tw-passagedata pid="43" name="Explain" tags="" position="1375,3450" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
+[[Try Again-&gt;Approach]]</tw-passagedata><tw-passagedata pid="42" name="Explain" tags="" position="1375,3450" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
 
 He doesn&#39;t seem impressed. 
 
-[[Try Again-&gt;Me]]</tw-passagedata><tw-passagedata pid="44" name="Blank" tags="" position="1125,3475" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
+[[Try Again-&gt;Me]]</tw-passagedata><tw-passagedata pid="43" name="Blank" tags="" position="1125,3475" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
 
 (text-colour:orange)[I like blank slates. So interesting to play around with!]
 
@@ -567,7 +557,7 @@ The (text-colour:orange)[writer] just stares at me.
 (if:(history: where its name contains &quot;Group2&quot;)&#39;s length is 0)[[[Tell him about the group-&gt;Group2]]]
 
 (if:(history: where its name contains &quot;Economy&quot;)&#39;s length is 0)[[[Complain about the economy-&gt;Economy]]
-]</tw-passagedata><tw-passagedata pid="45" name="Silent" tags="" position="925,3675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
+]</tw-passagedata><tw-passagedata pid="44" name="Silent" tags="" position="925,3675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
 
 (text-colour:orange) [Silent guy huh. I like that, makes it easier to put words into your mouth. ]
 
@@ -586,19 +576,19 @@ The writer chuckles for a solid minute.
 
 (if:(history: where its name contains &quot;Story&quot;)&#39;s length is 0)[[[ I have a once in a lifetime story for you. But you need to come with me first.-&gt;Story]]]
 
-(if:(history: where its name contains &quot;Silent2&quot;)&#39;s length is 0)[[[Stay Silent-&gt;Silent2]]]</tw-passagedata><tw-passagedata pid="46" name="Joke" tags="" position="1325,3675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
+(if:(history: where its name contains &quot;Silent2&quot;)&#39;s length is 0)[[[Stay Silent-&gt;Silent2]]]</tw-passagedata><tw-passagedata pid="45" name="Joke" tags="" position="1325,3675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
 
 He doesn&#39;t seem impressed. 
 
-[[Try Again-&gt;Blank]]</tw-passagedata><tw-passagedata pid="47" name="Group2" tags="" position="1425,3675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
+[[Try Again-&gt;Blank]]</tw-passagedata><tw-passagedata pid="46" name="Group2" tags="" position="1425,3675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
 
 He doesn&#39;t seem impressed. 
 
-[[Try Again-&gt;Blank]]</tw-passagedata><tw-passagedata pid="48" name="Economy" tags="" position="1225,3675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
+[[Try Again-&gt;Blank]]</tw-passagedata><tw-passagedata pid="47" name="Economy" tags="" position="1225,3675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
 
 He doesn&#39;t seem impressed. 
 
-[[Try Again-&gt;Blank]]</tw-passagedata><tw-passagedata pid="49" name="Inquire" tags="" position="1225,2475" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Rob.png&quot; width=30%&gt;
+[[Try Again-&gt;Blank]]</tw-passagedata><tw-passagedata pid="48" name="Inquire" tags="" position="1225,2475" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Rob.png&quot; width=30%&gt;
 
 (text-colour:green)[Dude, are you tripping out! You told us to pick 2 plans during the final meeting!]
 
@@ -609,23 +599,23 @@ He doesn&#39;t seem impressed.
 [[Plan B-&gt;Plan B]]
 
 [[I&#39;m not ready-&gt;Hurt]] 
-</tw-passagedata><tw-passagedata pid="50" name="RealAns" tags="" position="825,3875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
+</tw-passagedata><tw-passagedata pid="49" name="RealAns" tags="" position="825,3875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
 
 (text-colour:orange) [So cliche!]
 
-[[Try Again-&gt;Silent]]</tw-passagedata><tw-passagedata pid="51" name="Alien" tags="" position="925,3875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
+[[Try Again-&gt;Silent]]</tw-passagedata><tw-passagedata pid="50" name="Alien" tags="" position="925,3875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
 
 (text-colour:orange) [Aliens? Really? Show some more creativity.]
 
-[[Try Again-&gt;Silent]]</tw-passagedata><tw-passagedata pid="52" name="President" tags="" position="1025,3875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
+[[Try Again-&gt;Silent]]</tw-passagedata><tw-passagedata pid="51" name="President" tags="" position="1025,3875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
 
 (text-colour:orange) [Come on, you can do better!]
 
-[[Try Again-&gt;Silent]]</tw-passagedata><tw-passagedata pid="53" name="Silent2" tags="" position="1125,3875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
+[[Try Again-&gt;Silent]]</tw-passagedata><tw-passagedata pid="52" name="Silent2" tags="" position="1125,3875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
 
 (text-colour:orange) [You really want to try the same trick twice?]
 
-[[Try Again-&gt;Silent]]</tw-passagedata><tw-passagedata pid="54" name="Story" tags="" position="1275,3875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
+[[Try Again-&gt;Silent]]</tw-passagedata><tw-passagedata pid="53" name="Story" tags="" position="1275,3875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
 
 (text-colour:orange) [Hmm, intriguing indeed. Let&#39;s go!]
 
@@ -633,7 +623,7 @@ He doesn&#39;t seem impressed.
 
 {
 (set: $writer to true)
-}</tw-passagedata><tw-passagedata pid="55" name="WriterCollected" tags="" position="1425,2875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Fire.png&quot; width=30%&gt;
+}</tw-passagedata><tw-passagedata pid="54" name="WriterCollected" tags="" position="1425,2875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Fire.png&quot; width=30%&gt;
 
 {(if:$actor is false)[(text-colour:yellow) [Well done! You&#39;ve collected the (text-colour:orange)[writer]!]
 
@@ -646,7 +636,7 @@ He doesn&#39;t seem impressed.
 
 (if:$actor is true)[(text-colour:red) [You&#39;ve completed both parts! Time for the endgame.]
 
-[[Endgame-&gt;Endgame]]]</tw-passagedata><tw-passagedata pid="56" name="ActorCollected" tags="" position="1625,2875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Fire.png&quot; width=30%&gt;
+[[Endgame-&gt;Endgame]]]</tw-passagedata><tw-passagedata pid="55" name="ActorCollected" tags="" position="1625,2875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Fire.png&quot; width=30%&gt;
 
 (if:$writer is false)[(text-colour:yellow) [Well done! You&#39;ve collected the (text-colour:magenta)[Actor]!]
 
@@ -660,7 +650,7 @@ He doesn&#39;t seem impressed.
 
 [[Endgame-&gt;Endgame]]]
 
-</tw-passagedata><tw-passagedata pid="57" name="trailer" tags="" position="1950,2875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Trailer.png&quot; width=30%&gt;
+</tw-passagedata><tw-passagedata pid="56" name="trailer" tags="" position="1950,2875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Trailer.png&quot; width=30%&gt;
 
 I knock on the trailer. No response. 
 
@@ -677,7 +667,7 @@ Suddenly, a  (text-colour:lime)[cop] shows up!
 [[Run back to the group-&gt;Hurt]]
 
 
-</tw-passagedata><tw-passagedata pid="58" name="studio" tags="" position="2125,2875" size="100,100">I enter the studio, looking the (text-colour:magenta)[actor]. 
+</tw-passagedata><tw-passagedata pid="57" name="studio" tags="" position="2125,2875" size="100,100">I enter the studio, looking the (text-colour:magenta)[actor]. 
 
 Why am I even doing this? Who are those guys? They were chanting something under their breath....are they a cult?
 
@@ -693,7 +683,7 @@ I turn around to find an assistant hovering over me.
 
 [[Pretend you&#39;re the actor&#39;s friend-&gt;Pretend]]
 
-[[Tell the truth-&gt;Truth2]]</tw-passagedata><tw-passagedata pid="59" name="Guard" tags="" position="1725,3075" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Cop.png&quot; width=20%&gt;
+[[Tell the truth-&gt;Truth2]]</tw-passagedata><tw-passagedata pid="58" name="Guard" tags="" position="1725,3075" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Cop.png&quot; width=20%&gt;
 
 I offer the cop some money.
 
@@ -701,7 +691,7 @@ I offer the cop some money.
 
 The cop pulls me by his shirt and drags me to the precinct. 
 
-[[Go to the cell-&gt;Cell]]</tw-passagedata><tw-passagedata pid="60" name="Cell" tags="" position="1725,3275" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Cell.png&quot; width=30%&gt;
+[[Go to the cell-&gt;Cell]]</tw-passagedata><tw-passagedata pid="59" name="Cell" tags="" position="1725,3275" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Cell.png&quot; width=30%&gt;
 
 I&#39;m dumped into a dark, damp cell. 
 
@@ -711,7 +701,7 @@ Could one of them be the (text-colour:magenta)[actor]?
 
 (if:(history: where its name contains &quot;Old Man&quot;)&#39;s length is 0)[[[Speak to the old man-&gt;Old Man]]]
 
-[[Speak to the young girl-&gt;Young Woman]]</tw-passagedata><tw-passagedata pid="61" name="Old Man" tags="" position="1725,3475" size="100,100">I try to speak to the (text-colour:grey)[old man]. 
+[[Speak to the young girl-&gt;Young Woman]]</tw-passagedata><tw-passagedata pid="60" name="Old Man" tags="" position="1725,3475" size="100,100">I try to speak to the (text-colour:grey)[old man]. 
 
 &lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
 
@@ -719,7 +709,7 @@ Could one of them be the (text-colour:magenta)[actor]?
 
 [[Answer Yes-&gt;Yes]]
 
-[[Answer No-&gt;No]]</tw-passagedata><tw-passagedata pid="62" name="Young Woman" tags="" position="1925,3475" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
+[[Answer No-&gt;No]]</tw-passagedata><tw-passagedata pid="61" name="Young Woman" tags="" position="1925,3475" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
 
 Are you an actor?
 
@@ -729,11 +719,11 @@ What should I say?
 
 (if:(history: where its name contains &quot;Come&quot;)&#39;s length is 0)[[[I need you to come with me-&gt;Come]]]
 
-[[What happened?-&gt;Enquire]]</tw-passagedata><tw-passagedata pid="63" name="Come" tags="" position="1825,3675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
+[[What happened?-&gt;Enquire]]</tw-passagedata><tw-passagedata pid="62" name="Come" tags="" position="1825,3675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
 
 The actor seems to be angry at your request. 
 
-[[Try Again-&gt;Young Woman]]</tw-passagedata><tw-passagedata pid="64" name="Enquire" tags="" position="2025,3675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
+[[Try Again-&gt;Young Woman]]</tw-passagedata><tw-passagedata pid="63" name="Enquire" tags="" position="2025,3675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
 
 (text-colour:magenta)[I was a teenage film star. The biggest one in the world. Then it all came crashing down. Because of him. ]
 
@@ -741,27 +731,27 @@ She points to a picture of a man on the floor.
 
 (if:(history: where its name contains &quot;Man&quot;)&#39;s length is 0)[[[Ask about the man-&gt;Man]]]
 
-[[Ask her how she ended up here-&gt;Ended]]</tw-passagedata><tw-passagedata pid="65" name="Man" tags="" position="1925,3875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
+[[Ask her how she ended up here-&gt;Ended]]</tw-passagedata><tw-passagedata pid="64" name="Man" tags="" position="1925,3875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
 
 (text-colour:magenta)[I don&#39;t want to talk about him! ]
 
-[[Try Again-&gt;Enquire]]</tw-passagedata><tw-passagedata pid="66" name="Ended" tags="" position="2125,3875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
+[[Try Again-&gt;Enquire]]</tw-passagedata><tw-passagedata pid="65" name="Ended" tags="" position="2125,3875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
 
 (text-colour:magenta)[Dark forces conspired against me....Enough about me, why are you here?]
 
 [[Tell her the truth-&gt;Truth]]
 
 (if:(history: where its name contains &quot;Speeding&quot;)&#39;s length is 0)[[[Lie and tell her that you were speeding -&gt;Speeding]]]
-</tw-passagedata><tw-passagedata pid="67" name="Truth" tags="" position="2025,4075" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
+</tw-passagedata><tw-passagedata pid="66" name="Truth" tags="" position="2025,4075" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
 
 (text-colour:magenta)[Wow! A crazy cult wants me! I am looking for a change of career....
 
 Alright, I&#39;ll come with you, but first we need to get out of here. ]
 
 [[Try and find a way out-&gt;Way Out]]
-</tw-passagedata><tw-passagedata pid="68" name="Speeding" tags="" position="2225,4075" size="100,100">Buff! That&#39;s so boring...
+</tw-passagedata><tw-passagedata pid="67" name="Speeding" tags="" position="2225,4075" size="100,100">Buff! That&#39;s so boring...
 
-[[Try Again-&gt;Ended]]</tw-passagedata><tw-passagedata pid="69" name="Way Out" tags="" position="2025,4275" size="100,100">I try and look around the cell for a way out.
+[[Try Again-&gt;Ended]]</tw-passagedata><tw-passagedata pid="68" name="Way Out" tags="" position="2025,4275" size="100,100">I try and look around the cell for a way out.
 
 The cell is locked with a key combination.
 
@@ -777,7 +767,7 @@ What should I guess for the third digit?
 
 {
 (set: $answer to (text:(random: 0,9)))
-}</tw-passagedata><tw-passagedata pid="70" name="Confirm" tags="" position="2025,4450" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="69" name="Confirm" tags="" position="2025,4450" size="100,100">{
 (if:$input is $answer) [I got it right! The cell is open. 
 
 &lt;br&gt;[[Leave the cell with the actor-&gt;Leave]]]
@@ -791,7 +781,7 @@ What should I guess for the third digit?
 &lt;br&gt;(input-box:2bind $input,&quot;=========XX=========&quot;,1)
 
 &lt;br&gt;[[Confirm-&gt;Confirm]]]
-}</tw-passagedata><tw-passagedata pid="71" name="Leave" tags="" position="2025,4675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
+}</tw-passagedata><tw-passagedata pid="70" name="Leave" tags="" position="2025,4675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
 
 (text-colour:orange)[You got me out, thank you! Now, let&#39;s go find this group of yours! I&#39;m ready for some fun!]
 
@@ -799,7 +789,7 @@ What should I guess for the third digit?
 
 {
 (set: $actor to true)
-}</tw-passagedata><tw-passagedata pid="72" name="Endgame" tags="" position="1625,4875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Fire.png&quot; width=30%&gt;
+}</tw-passagedata><tw-passagedata pid="71" name="Endgame" tags="" position="1625,4875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Fire.png&quot; width=30%&gt;
 
 (text-colour:green)[You&#39;ve done it! You collected the three keys!]
 
@@ -819,7 +809,7 @@ No. No. No. I need a name. (text-colour:grey)[An identity].
 
 I get to complete my journey. I.....I&#39;m //speechless//.
 
-[[Complete your journey-&gt;End]]</tw-passagedata><tw-passagedata pid="73" name="End" tags="" position="1625,5075" size="100,100">&lt;div class=&quot;title&quot;&gt;&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Plant.gif&quot; width=30%&gt;
+[[Complete your journey-&gt;End]]</tw-passagedata><tw-passagedata pid="72" name="End" tags="" position="1625,5075" size="100,100">&lt;div class=&quot;title&quot;&gt;&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Plant.gif&quot; width=30%&gt;
 
 (text-colour:grey)[Congratulations, $name!
 
@@ -829,7 +819,7 @@ Welcome.]
 
 [[Relive your journey-&gt;Restart]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="74" name="Restart" tags="" position="1750,5275" size="100,100">You are restarting the game. 
+</tw-passagedata><tw-passagedata pid="73" name="Restart" tags="" position="1750,5275" size="100,100">You are restarting the game. 
 
 [[Start new journey -&gt;Start]]
 
@@ -840,7 +830,7 @@ Welcome.]
 (set: $event to (random: 1, 3))
 (set: $actor to false)
 (set: $writer to false)
-}</tw-passagedata><tw-passagedata pid="75" name="Pretend" tags="" position="2525,2875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Assistant.png&quot; width=30%&gt;
+}</tw-passagedata><tw-passagedata pid="74" name="Pretend" tags="" position="2525,2875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Assistant.png&quot; width=30%&gt;
 
 (text-colour:blue) [Oh, you&#39;re the(text-colour:magenta)[ actor&#39;s] friend? Take a seat, she should be here soon.] 
 
@@ -852,13 +842,13 @@ Am I the wierd one?
 
 [[Delve deep into your thoughts-&gt;Thoughts]]
 
-[[Wait for the actor-&gt;Wait]]</tw-passagedata><tw-passagedata pid="76" name="Truth2" tags="" position="2425,3075" size="100,100">(text-colour: blue) [Dude, you&#39;re crazy! Security!]
+[[Wait for the actor-&gt;Wait]]</tw-passagedata><tw-passagedata pid="75" name="Truth2" tags="" position="2425,3075" size="100,100">(text-colour: blue) [Dude, you&#39;re crazy! Security!]
 
 &lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Cop.png&quot; width=20%&gt;
 
 The cops arrive and drag me by my shirt. 
 
-[[Go with the cops-&gt;Cell]]</tw-passagedata><tw-passagedata pid="77" name="Thoughts" tags="" position="2725,3075" size="100,100">I woke up...in my dorm. 
+[[Go with the cops-&gt;Cell]]</tw-passagedata><tw-passagedata pid="76" name="Thoughts" tags="" position="2725,3075" size="100,100">I woke up...in my dorm. 
 
 Dorm? Am I in college? How old am I?
 
@@ -875,13 +865,13 @@ Why can&#39;t I remember anything?
 Ah, the actor. Let&#39;s wait for her. 
 
 [[Wait for the actor-&gt;Wait]]
-</tw-passagedata><tw-passagedata pid="78" name="Wait" tags="" position="2725,2875" size="100,100">I keep waiting for the (text-colour:orange)[actor] but she never shows up. I should check her trailer. 
+</tw-passagedata><tw-passagedata pid="77" name="Wait" tags="" position="2725,2875" size="100,100">I keep waiting for the (text-colour:orange)[actor] but she never shows up. I should check her trailer. 
 
-[[Check her trailer-&gt;trailer]]</tw-passagedata><tw-passagedata pid="79" name="Not Happy2" tags="" position="800,1000" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/TwoMenApproach.png&quot; width=30%&gt;
+[[Check her trailer-&gt;trailer]]</tw-passagedata><tw-passagedata pid="78" name="Not Happy2" tags="" position="800,1000" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/TwoMenApproach.png&quot; width=30%&gt;
 
 Hmmm. They didn&#39;t seem happy when I said that. 
 
-[[Try Again-&gt;Ready]]</tw-passagedata><tw-passagedata pid="80" name="Actor" tags="" position="2025,2675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Studio.png&quot; width=60%&gt;
+[[Try Again-&gt;Ready]]</tw-passagedata><tw-passagedata pid="79" name="Actor" tags="" position="2025,2675" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Studio.png&quot; width=60%&gt;
 
 A movie studio? 
 
@@ -893,13 +883,13 @@ Ok, let&#39;s get this done, where is this (text-colour:magenta)[actor]?
 
 [[Look for the actor inside the studio-&gt;studio]]
 
-</tw-passagedata><tw-passagedata pid="81" name="Pre-Start" tags="" position="925,175" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/PlantBad.png&quot; width=30%&gt;
+</tw-passagedata><tw-passagedata pid="80" name="Pre-Start" tags="" position="1100,50" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/PlantBad.png&quot; width=30%&gt;
 
 Before you begin, remember to forget.
 
 [[Start Story-&gt;Start]]
 
-</tw-passagedata><tw-passagedata pid="82" name="Yes" tags="" position="1575,3600" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+</tw-passagedata><tw-passagedata pid="81" name="Yes" tags="" position="1575,3600" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
 
 (text-colour:grey)[I was once where you where. Alone. Lost. //Broken//. ]
 
@@ -907,15 +897,15 @@ Before you begin, remember to forget.
 
 [[Help me understand-&gt;Help]]
 
-[[Go talk to the Young Woman-&gt;Cell]]</tw-passagedata><tw-passagedata pid="83" name="No" tags="" position="1700,3725" size="100,100">The (text-colour:grey)[old man ]looks angry. I should go talk to the Young Woman. 
+[[Go talk to the Young Woman-&gt;Cell]]</tw-passagedata><tw-passagedata pid="82" name="No" tags="" position="1700,3725" size="100,100">The (text-colour:grey)[old man ]looks angry. I should go talk to the Young Woman. 
 
-[[Go talk to the Young Woman-&gt;Cell]]</tw-passagedata><tw-passagedata pid="84" name="Help" tags="" position="1550,3775" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+[[Go talk to the Young Woman-&gt;Cell]]</tw-passagedata><tw-passagedata pid="83" name="Help" tags="" position="1550,3775" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
 
 (text-colour:grey)[Help? What do you want to know?]
 
 [[Tell me who the group are-&gt;Tell]]
 
-[[Tell me why I can&#39;t remember anything-&gt;Memory]]</tw-passagedata><tw-passagedata pid="85" name="Tell" tags="" position="1450,3950" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+[[Tell me why I can&#39;t remember anything-&gt;Memory]]</tw-passagedata><tw-passagedata pid="84" name="Tell" tags="" position="1450,3950" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
 
 (text-colour:grey)[Group? Hahaha...more like a &#39;&#39;cult&#39;&#39;. Yes...a cult. A cult of worship. 
 
@@ -927,13 +917,13 @@ My soul died that day. Never again. ]
 
 [[I don&#39;t understand-&gt;Understand]]
 
-[[I get it-&gt;Get]]</tw-passagedata><tw-passagedata pid="86" name="Memory" tags="" position="1650,3975" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+[[I get it-&gt;Get]]</tw-passagedata><tw-passagedata pid="85" name="Memory" tags="" position="1650,3975" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
 
 (text-colour:grey)[You asked for it, that&#39;s why. ]
 
 [[What do you mean?-&gt;Memory2]]
 
-[[This guy is crazy. Go talk to the young woman.-&gt;Cell]]</tw-passagedata><tw-passagedata pid="87" name="Understand" tags="" position="1300,4100" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+[[This guy is crazy. Go talk to the young woman.-&gt;Cell]]</tw-passagedata><tw-passagedata pid="86" name="Understand" tags="" position="1300,4100" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
 
 (text-colour:grey)[Understand? You will never understand this! It&#39;s cosmic...it&#39;s divine...it&#39;s beyond us!
 
@@ -943,7 +933,7 @@ The old man tears up.
 
 (text-colour:grey)[Leave me be. ]
 
-[[Go talk to the young woman-&gt;Cell]]</tw-passagedata><tw-passagedata pid="88" name="Get" tags="" position="1400,4100" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+[[Go talk to the young woman-&gt;Cell]]</tw-passagedata><tw-passagedata pid="87" name="Get" tags="" position="1400,4100" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
 
 (text-colour:grey)[You will never truly &quot;get it&quot;. Parts, yes. But never the whole. They keep the whole out of our hands...our puny, mortal hands. ]
 
@@ -951,7 +941,7 @@ The old man tears up.
 
 [[Who is they?-&gt;They]]
 
-[[Ask him why you can&#39;t remember anything-&gt;Memory]]</tw-passagedata><tw-passagedata pid="89" name="Mortal" tags="" position="1300,4225" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+[[Ask him why you can&#39;t remember anything-&gt;Memory]]</tw-passagedata><tw-passagedata pid="88" name="Mortal" tags="" position="1300,4225" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
 
 (text-colour:grey)[Of course. They are not like us. 
 
@@ -961,7 +951,7 @@ I don&#39;t have the whole, as I said before, but from what I do know. They are 
 
 [[They&#39;re aliens??-&gt;Aliens]]
 
-[[This guy is crazy. Go talk to the young woman.-&gt;Cell]]</tw-passagedata><tw-passagedata pid="90" name="They" tags="" position="1400,4225" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+[[This guy is crazy. Go talk to the young woman.-&gt;Cell]]</tw-passagedata><tw-passagedata pid="89" name="They" tags="" position="1400,4225" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
 
 (text-colour:grey)[&#39;They&quot;&#39;?
 
@@ -973,7 +963,7 @@ I don&#39;t have the whole, as I said before, but from what I do know. They are 
 
 [[This guy is crazy. Go talk to the young woman.-&gt;Cell]]
 
-</tw-passagedata><tw-passagedata pid="91" name="Aliens" tags="" position="1350,4400" size="100,100">Just as the old man is about to respond, the professor appears behind me!
+</tw-passagedata><tw-passagedata pid="90" name="Aliens" tags="" position="1350,4400" size="100,100">Just as the old man is about to respond, the professor appears behind me!
 
 &lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Prof.png&quot; width=15%&gt;
 
@@ -995,7 +985,7 @@ He turns to face me.
 
 Let me le me fjwiof w=fiew wfv=cw0ei lenef0snsd noo no~~
 
-[[Go talk to the young woman-&gt;Cell]]</tw-passagedata><tw-passagedata pid="92" name="Untitled Passage" tags="" position="2175,4375" size="100,100"></tw-passagedata><tw-passagedata pid="93" name="Untitled Passage 1" tags="" position="2175,4625" size="100,100"></tw-passagedata><tw-passagedata pid="94" name="Memory2" tags="" position="1650,4150" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+[[Go talk to the young woman-&gt;Cell]]</tw-passagedata><tw-passagedata pid="91" name="Untitled Passage" tags="" position="2175,4375" size="100,100"></tw-passagedata><tw-passagedata pid="92" name="Untitled Passage 1" tags="" position="2175,4625" size="100,100"></tw-passagedata><tw-passagedata pid="93" name="Memory2" tags="" position="1650,4150" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
 
 (text-colour:grey)[Here&#39;s what they do. They go around the country, finding young men and women who are lost. No meaning to their life. On a path leading nowhere. 
 
@@ -1009,7 +999,7 @@ The mind fragments to such a point where the person themselves are filling to er
 
 [[I erased my own memories?-&gt;Memory3]]
 
-[[This guy is crazy. Go talk to the young woman.-&gt;Cell]]</tw-passagedata><tw-passagedata pid="95" name="Memory3" tags="" position="1650,4325" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+[[This guy is crazy. Go talk to the young woman.-&gt;Cell]]</tw-passagedata><tw-passagedata pid="94" name="Memory3" tags="" position="1650,4325" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
 
 (text-colour:grey)[Yes you did. So did I. 
 
@@ -1019,7 +1009,7 @@ It&#39;s not your fault. Don&#39;t blame yourself. I consider the man I was befo
 (if:(history: where its name contains &quot;Tell&quot;)&#39;s length is 0)[&lt;br&gt;[[Who are the group?-&gt;Tell]]]
 
 &lt;br&gt;[[Tell me more-&gt;Memory4]]
-}</tw-passagedata><tw-passagedata pid="96" name="Memory4" tags="" position="1625,4475" size="100,100">Just as the old man is about to respond, the professor appears behind me!
+}</tw-passagedata><tw-passagedata pid="95" name="Memory4" tags="" position="1625,4475" size="100,100">Just as the old man is about to respond, the professor appears behind me!
 
 &lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Prof.png&quot; width=15%&gt;
 
@@ -1041,7 +1031,49 @@ He turns to face me.
 
 Let me le me fjwiof w=fiew wfv=cw0ei lenef0snsd noo no~~
 
-[[Go talk to the young woman-&gt;Cell]]</tw-passagedata></tw-storydata>
+[[Go talk to the young woman-&gt;Cell]]</tw-passagedata><tw-passagedata pid="96" name="Pre-Lab" tags="" position="1775,1325" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Prof.png&quot; width=20%&gt;
+
+(text-colour:red)[Before I can help you, I need you to answer a question. 
+
+What if we don&#39;t have free will, but we are deterministic systems complex enough to think we&#39;re free?]
+
+[[Then free will is a convincing enough illusion-&gt;Lab]]
+
+(if:(history: where its name contains &quot;Wrong&quot;)&#39;s length is 0)[[[Those two are functionally equivalent and it&#39;s not meaningful to make a distinction-&gt;Wrong]]]</tw-passagedata><tw-passagedata pid="97" name="Wrong" tags="" position="1850,1450" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Prof.png&quot; width=20%&gt;
+
+(text-colour:red)[Hmmmm]
+
+The professor doesn&#39;t seem satisfied. 
+
+[[Try Again-&gt;Pre-Lab]]</tw-passagedata><tw-passagedata pid="98" name="Pre-Rob" tags="" position="500,1775" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Rob.png&quot; width=30%&gt;
+
+(text-colour:green)[Good answer. Take this key. ]
+
+&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Key.png&quot; width=30%&gt;
+
+[[Collect the key-&gt;RobKey]]</tw-passagedata><tw-passagedata pid="99" name="RobWrong" tags="" position="375,1375" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Rob.png&quot; width=30%&gt;
+
+(text-colour:green)[Hmmmm]
+
+Rob doesn&#39;t seem satisfied. 
+
+[[Try Again-&gt;Marked]]</tw-passagedata><tw-passagedata pid="100" name="Marked" tags="" position="375,1125" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Rob.png&quot; width=30%&gt;
+
+(text-colour:green)[Marked? Being marked is special. It&#39;s a great honor that they&#39;ve bestowed upon you. I hope you&#39;re ready.
+
+(text-colour:white)[Ready? Ready for what? ]
+
+You&#39;ll know soon enough. I&#39;m running low on time. 
+
+Quick, answer this question - 
+
+Does power corrupt or do the corrupt seek power?]
+
+(if:(history: where its name contains &quot;RobWrong&quot;)&#39;s length is 0)[[[Power doesn&#39;t corrupt. Power reveals.-&gt;RobWrong]]]
+
+[[The problem with politics is that the person it takes to become a president is not the type of person we would want as a president.-&gt;Pre-Rob]]
+
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
