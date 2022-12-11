@@ -9,12 +9,13 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Twine Story.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Twine Story" startnode="81" creator="Twine" creator-version="2.5.1" format="Harlowe" format-version="3.3.3" ifid="19273060-5ED5-4BCB-817A-47F07085F106" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-link {
+<tw-storydata name="Twine Story" startnode="81" creator="Twine" creator-version="2.5.1" format="Harlowe" format-version="3.3.3" ifid="19273060-5ED5-4BCB-817A-47F07085F106" options="" tags="" zoom="0.3" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-link {
  font-family: "Lucida Console";
 }
 
 tw-passage {
   text-align: center;
+  font-size:20px;
 }
 
 .visited {
@@ -131,7 +132,7 @@ I run out of the room as it ends. I need to lie down and think.
 (text-colour:red) [We begin soon, as you know. Everything is slowly falling into place.]
 
 {&lt;br&gt;
-(if:$CollectedRobKey or $CollectedMenKey is true)[How does where I&#39;ve been?] I&#39;m started to get freaked out.
+(if:$CollectedRobKey or $CollectedMenKey is true)[How does he where I&#39;ve been?] I&#39;m started to get freaked out.
 }
 
 (text-colour:red)[Come now, I&#39;ll take you to my lab and get you looked at.]
@@ -178,7 +179,7 @@ As I take another moment to look around, the (text-colour:red)[professor] walks 
 
 (if:$CollectedMenKey is true)[{I walk up to the two men.
 
-&lt;br&gt; [(text-colour:red)[You already have our key! We can&#39;t help you anymore until you find the others!]]
+&lt;br&gt; [(text-colour:yellow)[You already have our key! We can&#39;t help you anymore until you find the others!]]
 
 &lt;br&gt;[[Go to the dining hall-&gt;Forget]]
 
@@ -326,7 +327,7 @@ I approach (text-colour:green)[Rob] and greet him. {
 {
 &lt;br&gt;(if:$CollectedMenKey is false)[[[Go back to the dining hall-&gt;Dining Hall]]]
 
-&lt;br&gt;(if:$CollectedProfKey is &quot;&quot;)[[[Go to your dorm-&gt;Wake]]]
+&lt;br&gt;(if:$CollectedProfKey is false)[[[Go to your dorm-&gt;Wake]]]
 
 &lt;br&gt;(if:$CollectedProfKey is true)[(if:$CollectedMenKey is true)[[[Go where life leads you-&gt;Key]]]]
 }
@@ -624,7 +625,7 @@ He doesn&#39;t seem impressed.
 
 (text-colour:orange) [You really want to try the same trick twice?]
 
-[[Try Again-&gt;Silent]]</tw-passagedata><tw-passagedata pid="54" name="Story" tags="" position="1525,4075" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
+[[Try Again-&gt;Silent]]</tw-passagedata><tw-passagedata pid="54" name="Story" tags="" position="1275,3875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Writer2.png&quot; width=30%&gt;
 
 (text-colour:orange) [Hmm, intriguing indeed. Let&#39;s go!]
 
@@ -710,9 +711,15 @@ Could one of them be the (text-colour:magenta)[actor]?
 
 (if:(history: where its name contains &quot;Old Man&quot;)&#39;s length is 0)[[[Speak to the old man-&gt;Old Man]]]
 
-[[Speak to the young girl-&gt;Young Woman]]</tw-passagedata><tw-passagedata pid="61" name="Old Man" tags="" position="1725,3475" size="100,100">I try to speak to the old man but he doesn&#39;t respond. 
+[[Speak to the young girl-&gt;Young Woman]]</tw-passagedata><tw-passagedata pid="61" name="Old Man" tags="" position="1725,3475" size="100,100">I try to speak to the (text-colour:grey)[old man]. 
 
-[[Try Again-&gt;Cell]]</tw-passagedata><tw-passagedata pid="62" name="Young Woman" tags="" position="1925,3475" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
+&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+
+(text-colour:grey)[You&#39;ve been marked, haven&#39;t you?]
+
+[[Answer Yes-&gt;Yes]]
+
+[[Answer No-&gt;No]]</tw-passagedata><tw-passagedata pid="62" name="Young Woman" tags="" position="1925,3475" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Actor.png&quot; width=30%&gt;
 
 Are you an actor?
 
@@ -794,23 +801,29 @@ What should I guess for the third digit?
 (set: $actor to true)
 }</tw-passagedata><tw-passagedata pid="72" name="Endgame" tags="" position="1625,4875" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Fire.png&quot; width=30%&gt;
 
-(text-colour:green)[You&#39;ve done it! You collected the three keys!
-]
-(text-colour:orange)[You convinced the writer and the actor to join us!
-]
+(text-colour:green)[You&#39;ve done it! You collected the three keys!]
+
+(text-colour:orange)[You convinced the writer and the actor to join us!]
+
 (text-colour:red)[Before you complete your journey. It is time for your new name.]
 
-I get a name? I get an //identity//. 
+I get a name? I get an //identity//.  
+
+(text-colour:grey)[Don&#39;t do it. ]
+
+Who was that voice? Who was that? 
+
+No. No. No. I need a name. (text-colour:grey)[An identity]. 
 
 (input-box:2bind $name,&quot;=======XXXXXX=======&quot;,1)
 
-I get to complete my journey. I.....I&#39;m //speeczhless//.
+I get to complete my journey. I.....I&#39;m //speechless//.
 
-[[Complete your journey-&gt;End]]</tw-passagedata><tw-passagedata pid="73" name="End" tags="" position="1625,5075" size="100,100">&lt;div class=&quot;title&quot;&gt;&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Plant.gif&quot; width=70%&gt;
+[[Complete your journey-&gt;End]]</tw-passagedata><tw-passagedata pid="73" name="End" tags="" position="1625,5075" size="100,100">&lt;div class=&quot;title&quot;&gt;&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Plant.gif&quot; width=30%&gt;
 
 (text-colour:grey)[Congratulations, $name!
 
-You&#39;ve completed your journey. 
+You&#39;ve completed your journey. The next stage awaits. 
 
 Welcome.]
 
@@ -886,7 +899,149 @@ Before you begin, remember to forget.
 
 [[Start Story-&gt;Start]]
 
-</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="82" name="Yes" tags="" position="1575,3600" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+
+(text-colour:grey)[I was once where you where. Alone. Lost. //Broken//. ]
+
+(text-colour: grey) [Get away from them while you can. Save your life. What&#39;s left of it anyway...]
+
+[[Help me understand-&gt;Help]]
+
+[[Go talk to the Young Woman-&gt;Cell]]</tw-passagedata><tw-passagedata pid="83" name="No" tags="" position="1700,3725" size="100,100">The (text-colour:grey)[old man ]looks angry. I should go talk to the Young Woman. 
+
+[[Go talk to the Young Woman-&gt;Cell]]</tw-passagedata><tw-passagedata pid="84" name="Help" tags="" position="1550,3775" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+
+(text-colour:grey)[Help? What do you want to know?]
+
+[[Tell me who the group are-&gt;Tell]]
+
+[[Tell me why I can&#39;t remember anything-&gt;Memory]]</tw-passagedata><tw-passagedata pid="85" name="Tell" tags="" position="1450,3950" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+
+(text-colour:grey)[Group? Hahaha...more like a &#39;&#39;cult&#39;&#39;. Yes...a cult. A cult of worship. 
+
+I was young, stupid and naive when they approached me. An easy target. They promised me the world. I did as they said. I completed the endgame. 
+
+But it was a lie. Their paradise was a lie. A broken truth. 
+
+My soul died that day. Never again. ]
+
+[[I don&#39;t understand-&gt;Understand]]
+
+[[I get it-&gt;Get]]</tw-passagedata><tw-passagedata pid="86" name="Memory" tags="" position="1650,3975" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+
+(text-colour:grey)[You asked for it, that&#39;s why. ]
+
+[[What do you mean?-&gt;Memory2]]
+
+[[This guy is crazy. Go talk to the young woman.-&gt;Cell]]</tw-passagedata><tw-passagedata pid="87" name="Understand" tags="" position="1300,4100" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+
+(text-colour:grey)[Understand? You will never understand this! It&#39;s cosmic...it&#39;s divine...it&#39;s beyond us!
+
+It&#39;s........//beautiful//. ]
+
+The old man tears up. 
+
+(text-colour:grey)[Leave me be. ]
+
+[[Go talk to the young woman-&gt;Cell]]</tw-passagedata><tw-passagedata pid="88" name="Get" tags="" position="1400,4100" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+
+(text-colour:grey)[You will never truly &quot;get it&quot;. Parts, yes. But never the whole. They keep the whole out of our hands...our puny, mortal hands. ]
+
+[[Mortal?-&gt;Mortal]]
+
+[[Who is they?-&gt;They]]
+
+[[Ask him why you can&#39;t remember anything-&gt;Memory]]</tw-passagedata><tw-passagedata pid="89" name="Mortal" tags="" position="1300,4225" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+
+(text-colour:grey)[Of course. They are not like us. 
+
+They are divine beings of pure light. Pure energy. Starlight. 
+
+I don&#39;t have the whole, as I said before, but from what I do know. They are not of this world. ]
+
+[[They&#39;re aliens??-&gt;Aliens]]
+
+[[This guy is crazy. Go talk to the young woman.-&gt;Cell]]</tw-passagedata><tw-passagedata pid="90" name="They" tags="" position="1400,4225" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+
+(text-colour:grey)[&#39;They&quot;&#39;?
+
+Divine beings of pure light. Pure energy. Starlight. 
+
+I don&#39;t have the whole, as I said before, but from what I do know. They are not of this world. ]
+
+[[They&#39;re aliens??-&gt;Aliens]]
+
+[[This guy is crazy. Go talk to the young woman.-&gt;Cell]]
+
+</tw-passagedata><tw-passagedata pid="91" name="Aliens" tags="" position="1350,4400" size="100,100">Just as the old man is about to respond, the professor appears behind me!
+
+&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Prof.png&quot; width=15%&gt;
+
+(text-colour:red)[(text-colour:grey)[Abraham],  you spoil the boy with information he is not ready to learn. ]
+
+(text-colour:red)[He is on his mission. How rude of you to disturb him!]
+
+&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=15%&gt;
+
+(text-colour:grey)[Another one, (text-colour:red)[Cornelius]? When will you stop? When will your lunacy end?]
+
+(text-colour:red)[I will talk to you later. For now, the boy must finish his mission.]
+
+He turns to face me. 
+
+(text-colour:red)[Of you go, now!]
+
+~~No, I don&#39;t want to go. Let me talk to him....no no 
+
+Let me le me fjwiof w=fiew wfv=cw0ei lenef0snsd noo no~~
+
+[[Go talk to the young woman-&gt;Cell]]</tw-passagedata><tw-passagedata pid="92" name="Untitled Passage" tags="" position="2175,4375" size="100,100"></tw-passagedata><tw-passagedata pid="93" name="Untitled Passage 1" tags="" position="2175,4625" size="100,100"></tw-passagedata><tw-passagedata pid="94" name="Memory2" tags="" position="1650,4150" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+
+(text-colour:grey)[Here&#39;s what they do. They go around the country, finding young men and women who are lost. No meaning to their life. On a path leading nowhere. 
+
+Like (text-colour:white)[you]. 
+
+(text-colour:white)[What?]
+
+They fill their mind with rubbish. Hope of a paradise. A better life. 
+
+The mind fragments to such a point where the person themselves are filling to erase their memories and join them. ]
+
+[[I erased my own memories?-&gt;Memory3]]
+
+[[This guy is crazy. Go talk to the young woman.-&gt;Cell]]</tw-passagedata><tw-passagedata pid="95" name="Memory3" tags="" position="1650,4325" size="100,100">&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=30%&gt;
+
+(text-colour:grey)[Yes you did. So did I. 
+
+It&#39;s not your fault. Don&#39;t blame yourself. I consider the man I was before a different person. Not me. Nothing like me. ]
+
+{
+(if:(history: where its name contains &quot;Tell&quot;)&#39;s length is 0)[&lt;br&gt;[[Who are the group?-&gt;Tell]]]
+
+&lt;br&gt;[[Tell me more-&gt;Memory4]]
+}</tw-passagedata><tw-passagedata pid="96" name="Memory4" tags="" position="1625,4475" size="100,100">Just as the old man is about to respond, the professor appears behind me!
+
+&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/Prof.png&quot; width=15%&gt;
+
+(text-colour:red)[(text-colour:grey)[Abraham],  you spoil the boy with information he is not ready to learn. ]
+
+(text-colour:red)[He is on his mission. How rude of you to disturb him!]
+
+&lt;img src=&quot;https://sidnarsipur.github.io/twinegame/images/OldMan.png&quot; width=15%&gt;
+
+(text-colour:grey)[Another one, (text-colour:red)[Cornelius]? When will you stop? When will your lunacy end?]
+
+(text-colour:red)[I will talk to you later. For now, the boy must finish his mission.]
+
+He turns to face me. 
+
+(text-colour:red)[Of you go, now!]
+
+~~No, I don&#39;t want to go. Let me talk to him....no no 
+
+Let me le me fjwiof w=fiew wfv=cw0ei lenef0snsd noo no~~
+
+[[Go talk to the young woman-&gt;Cell]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
